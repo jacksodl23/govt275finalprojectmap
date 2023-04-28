@@ -1,3 +1,4 @@
+library(readr)
 library(tigris)
 library(leaflet)
 library(leaflet.providers)
