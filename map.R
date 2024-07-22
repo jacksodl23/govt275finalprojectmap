@@ -23,9 +23,9 @@ hovertext = paste0(
 ) %>%
   lapply(htmltools::HTML)
 
-colorbin <- ~colorBin("YlOrRd", les_avg)(les_avg)
+colorbin <- ~colorBin("RdYlBu", les_avg)(les_avg)
 
-pal <- colorBin(palette = "YlOrRd", domain = states_and_les$les_avg)
+pal <- colorBin(palette = "RdYlBu", domain = states_and_les$les_avg)
 
 leaflet(states_and_les) %>%
   addTiles() %>%
@@ -33,4 +33,4 @@ leaflet(states_and_les) %>%
   addProviderTiles(providers$CartoDB.DarkMatterNoLabels) %>%
   addPolygons(fillOpacity = 0.5, smoothFactor = 0.5, fillColor = colorbin,
               color = "black", opacity = 1, weight = 0.7, label = hovertext) %>%
-  addLegend("topright", pal = pal, values = ~les_avg, title = "Average LES of the 117th Senate")
+  addLegend("topright", pal = pal, values = ~les_avg, title = "Average Legislative Effectiveness Score (LES) of the 117th Senate")
